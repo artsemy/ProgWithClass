@@ -7,10 +7,10 @@ public class Main {
 //        checkWork.func1();
 //        checkWork.func2();
 //        checkWork.func3();
-        checkWork.func4();
+//        checkWork.func4();
+//        checkWork.func5();
+//        checkWork.func6();
+        checkWork.func7();
     }
-
-
-
 
 }

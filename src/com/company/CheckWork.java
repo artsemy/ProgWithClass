@@ -1,9 +1,6 @@
 package com.company;
 
-import com.company.classes.Student;
-import com.company.classes.Test1;
-import com.company.classes.Test2;
-import com.company.classes.Train;
+import com.company.classes.*;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -94,5 +91,36 @@ public class CheckWork {
         trains[2].setDestination("Moscow");
         trains[4].setDestination("Minsk");
         return trains;
+    }
+
+    public void func5(){
+        Counter counter1 = new Counter();
+        Counter counter2 = new Counter(1, 15, 7);
+        System.out.print("count1 " + counter1.getValue());
+        while (counter1.canIncrease()){
+            counter1.increase();
+        }
+        System.out.println(" " + counter1.getValue());
+        System.out.print("count2 " + counter2.getValue());
+        while (counter2.canDecrease()){
+            counter2.decrease();
+        }
+        System.out.println(" " + counter2.getValue());
+    }
+
+    public void func6(){
+        Time time = new Time();
+        time.print();
+        time.setTime(16, 1, 1);
+        time.print();
+        time.addSecond(-3670);
+        time.print();
+    }
+
+    public void func7(){
+        Triangle triangle1 = new Triangle();
+        Triangle triangle2 = new Triangle(8,5, 5);
+        System.out.println(triangle1.perimeter());
+        System.out.println(triangle2.area());
     }
 }
