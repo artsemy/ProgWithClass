@@ -1,4 +1,4 @@
-package com.company;
+package com.company.classes;
 
 public class Test1 {
     private int x1;
@@ -25,7 +25,7 @@ public class Test1 {
         return x1 + x2;
     }
 
-    private int max(){
+    public int max(){
         return Math.max(x1, x2);
     }
 }

@@ -1,4 +1,4 @@
-package com.company;
+package com.company.classes;
 
 public class Test2 {
     private int x1;

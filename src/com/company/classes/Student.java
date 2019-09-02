@@ -1,6 +1,4 @@
-package com.company;
-
-import java.util.Arrays;
+package com.company.classes;
 
 public class Student {
     private String firstName;
@@ -54,29 +52,35 @@ public class Student {
         this.marks = marks;
     }
 
-    public void printWithMarks(boolean b1, boolean b2, boolean b3, int[] mass){
-        boolean b = true;
-        for (int k: mass) {
-            if (!checkMark(k)){
-                b = false;
-            }
-        }
-        if (b){
-            if (b1){
+    public void printWithMarks(boolean firstname, boolean lastname, boolean group, boolean marks, int[] mass){
+        if (checkMarks(mass)){
+            if (firstname){
                 printFirstName();
             }
-            if (b2){
+            if (lastname){
                 printLastName();
             }
-            if (b3){
+            if (group){
                 printGroup();
+            }
+            if (marks){
+                printMarks();
             }
         }
     }
 
-    private boolean checkMark(int m){
-        for (int k: marks) {
-            if (k == m) {
+    private boolean checkMarks(int[] mass){
+        for (int mark : marks) {
+            if (!checkMark(mass, mark)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean checkMark(int[] m, int elem){
+        for (int k: m) {
+            if (k == elem){
                 return true;
             }
         }
@@ -84,15 +88,15 @@ public class Student {
     }
 
     public void printFirstName(){
-        System.out.println(firstName);
+        System.out.println("firstname: " + firstName);
     }
 
     public void printLastName(){
-        System.out.println(firstName);
+        System.out.println("lastname: " + lastName);
     }
 
     public void printGroup(){
-        System.out.println(firstName);
+        System.out.println("group: " + group);
     }
 
     public void printMarks(){
