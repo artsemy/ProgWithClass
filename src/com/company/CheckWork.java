@@ -118,9 +118,37 @@ public class CheckWork {
     }
 
     public void func7(){
-        Triangle triangle1 = new Triangle();
-        Triangle triangle2 = new Triangle(8,5, 5);
-        System.out.println(triangle1.perimeter());
-        System.out.println(triangle2.area());
+        Test2 t1 = new Test2(0, 0);
+        Test2 t2 = new Test2(4, 0);
+        Test2 t3 = new Test2(0, 3);
+        Triangle triangle = new Triangle(t1, t2, t3);
+        System.out.println(triangle.perimeter());
+        System.out.println(triangle.area());
+        triangle.gedMid();
     }
+
+    public void func8(){
+        CustomerList customerList = new CustomerList();
+        for (int i = 0; i < 15; i++) {
+            Customer c = new Customer();
+            changeCustomer(c);
+            customerList.addCustomer(c);
+        }
+        customerList.print();
+        customerList.sortByName();
+        System.out.println("------------------------");
+        customerList.print();
+        System.out.println("------------------------");
+        customerList.showByCardInterval(0L, 9999_9999_9999_9999L);
+    }
+
+    private void changeCustomer(Customer c){
+        Random r = new Random();
+        String[] fNames = new String[]{"Ann", "Mike", "Max"};
+        String[] lNames = new String[]{"Smith", "Cold", "Hot"};
+        c.setFirstName(fNames[r.nextInt(3)]);
+        c.setLastName(lNames[r.nextInt(3)]);
+        c.setCreditCardNumber(r.nextLong()/1000);
+    }
+
 }
