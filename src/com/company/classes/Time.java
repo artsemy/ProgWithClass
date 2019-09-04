@@ -73,4 +73,16 @@ public class Time {
     public void print(){
         System.out.printf("%02d:%02d:%02d\n", hour, minute, second);
     }
+
+    @Override
+    public String toString() {
+        return String.format("%02d:%02d:%02d", hour, minute, second);
+    }
+
+    static public int compare(Time o1, Time o2) {
+        int l1 = o1.hour*3600 + o1.minute*60 + o1.second;
+        int l2 = o2.hour*3600 + o2.minute*60 + o2.second;
+        return Integer.compare(l1, l2);
+    }
+
 }

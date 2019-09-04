@@ -1,4 +1,7 @@
-package com.company.classes;
+package com.company.classes.customers;
+
+import com.company.classes.Counter;
+import com.company.classes.customers.Customer;
 
 import java.util.Arrays;
 import java.util.Comparator;

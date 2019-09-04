@@ -1,4 +1,4 @@
-package com.company.classes;
+package com.company.classes.customers;
 
 public class Customer {
 
