@@ -1,7 +1,14 @@
 package com.company;
 
+import com.company.classes.bank.Bank;
+import com.company.classes.bank.BankAccount;
+import com.company.classes.bank.BankClient;
 import com.company.classes.cars.Car;
 import com.company.classes.cars.Wheel;
+import com.company.classes.country.City;
+import com.company.classes.country.Country;
+import com.company.classes.country.District;
+import com.company.classes.country.State;
 import com.company.classes.texts.Sentence;
 import com.company.classes.texts.Text;
 import com.company.classes.texts.Word;
@@ -103,7 +110,61 @@ public class CheckWork2 {
 
     private void func2d(Car[] cars){
         for (Car c: cars) {
-            System.out.println(c.getModel());
+            c.printModel();
         }
     }
+
+    public void func3(){
+        Country country = new Country();
+        changeCountry(country);
+        country.printCapital();
+        country.printCountStates();
+        country.printArea();
+        country.printCountStates();
+    }
+
+    private void changeCountry(Country country){
+        for (int i = 0; i < 4; i++) {
+            State state = new State();
+            for (int j = 0; j < 3; j++) {
+                District district = new District();
+                for (int k = 0; k < 2; k++) {
+                    City city = new City();
+                    district.addCity(city);
+                }
+                district.setArea(10*(j+1));
+                state.addDistrict(district);
+            }
+            country.addState(state);
+        }
+    }
+
+    public void func4(){
+        Random r = new Random();
+        Bank bank = new Bank();
+        for (int i = 0; i < 5; i++) {
+            BankClient bc = new BankClient();
+            bc.setName("name#" + i);
+            for (int j = 0; j < 3; j++) {
+                BankAccount ba = new BankAccount();
+                ba.setBalance(r.nextInt(101) - 50);
+                bc.addBankAcc(ba);
+            }
+            bank.addClient(bc);
+        }
+        BankAccount[] ba = bank.findByName("name#3");
+        for (BankAccount b: ba) {
+            System.out.println(b);
+        }
+        System.out.println("---------------------");
+        bank.sortByBalance();
+        for (BankAccount b: bank.getBankAccounts()) {
+            System.out.println(b);
+        }
+        System.out.println("---------------------");
+        System.out.println(bank.countBalance());
+        System.out.println(bank.countPositiveBalance());
+        System.out.println(bank.countNegativeBalance());
+    }
+
 }

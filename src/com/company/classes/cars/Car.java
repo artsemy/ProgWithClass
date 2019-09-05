@@ -1,7 +1,5 @@
 package com.company.classes.cars;
 
-import java.util.Arrays;
-
 public class Car {
 
     private String model;
@@ -78,5 +76,9 @@ public class Car {
                 ", isFueled=" + isFueled +
                 ", isStarted=" + isStarted +
                 '}';
+    }
+
+    public void printModel(){
+        System.out.println(model);
     }
 }
