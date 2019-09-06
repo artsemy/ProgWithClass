@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 //        part1();
-        part2();
+//        part2();
     }
 
     static void part1(){
@@ -23,10 +23,11 @@ public class Main {
 
     static void part2(){
         CheckWork2 checkWork2 = new CheckWork2();
-//        checkWork2.func1();
-//        checkWork2.func2();
-//        checkWork2.func3();
+        checkWork2.func1();
+        checkWork2.func2();
+        checkWork2.func3();
         checkWork2.func4();
+        checkWork2.func5();
     }
 
 }

@@ -12,6 +12,8 @@ import com.company.classes.country.State;
 import com.company.classes.texts.Sentence;
 import com.company.classes.texts.Text;
 import com.company.classes.texts.Word;
+import com.company.classes.trips.Trip;
+import com.company.classes.trips.TripList;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -140,6 +142,23 @@ public class CheckWork2 {
     }
 
     public void func4(){
+        Bank bank = initBank();
+        BankAccount[] ba = bank.findByName("name#3");
+        for (BankAccount b: ba) {
+            System.out.println(b);
+        }
+        System.out.println("---------------------");
+        bank.sortByBalance();
+        for (BankAccount b: bank.getBankAccounts()) {
+            System.out.println(b);
+        }
+        System.out.println("---------------------");
+        System.out.println("full balance " + bank.countBalance());
+        System.out.println("positive " + bank.countPositiveBalance());
+        System.out.println("negative " + bank.countNegativeBalance());
+    }
+
+    private Bank initBank(){
         Random r = new Random();
         Bank bank = new Bank();
         for (int i = 0; i < 5; i++) {
@@ -152,19 +171,32 @@ public class CheckWork2 {
             }
             bank.addClient(bc);
         }
-        BankAccount[] ba = bank.findByName("name#3");
-        for (BankAccount b: ba) {
-            System.out.println(b);
+        return bank;
+    }
+
+    public void func5(){
+        TripList tripList = new TripList();
+        for (int i = 0; i < 20; i++) {
+            Trip trip = changeTrip();
+            tripList.addTrip(trip);
         }
-        System.out.println("---------------------");
-        bank.sortByBalance();
-        for (BankAccount b: bank.getBankAccounts()) {
-            System.out.println(b);
-        }
-        System.out.println("---------------------");
-        System.out.println(bank.countBalance());
-        System.out.println(bank.countPositiveBalance());
-        System.out.println(bank.countNegativeBalance());
+        tripList.print();
+        System.out.println("-----------------");
+        tripList.sortByType();
+        tripList.print();
+        System.out.println("-----------------");
+        tripList.findTrip(null, null, true, -1).print();
+        System.out.println("-----------------");
+        tripList.findTrip("rest", "bus", -1).print();
+    }
+
+    private Trip changeTrip(){
+        Random r = new Random();
+        String type = Trip.tripTypes[r.nextInt(5)];
+        String transport = Trip.transportTypes[r.nextInt(4)];
+        boolean food = r.nextBoolean();
+        int days = r.nextInt(10) + 1;
+        return new Trip(type, transport, food, days);
     }
 
 }
