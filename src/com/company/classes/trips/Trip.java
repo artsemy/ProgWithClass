@@ -9,6 +9,7 @@ public class Trip {
     private boolean food;
     private int days;
 
+    //constructor
     public Trip() {
         type = tripTypes[0];
         transport = transportTypes[0];
@@ -16,6 +17,7 @@ public class Trip {
         days = 3;
     }
 
+    //constructor
     public Trip(String type, String transport, boolean food, int days) {
         this.type = type;
         this.transport = transport;
@@ -23,14 +25,17 @@ public class Trip {
         this.days = days;
     }
 
+    //get method
     public String getType() {
         return type;
     }
 
+    //set method
     public void setType(String type) {
         this.type = type;
     }
 
+    //set method
     public void setType(int i) {
         if (i >= 0 && i < tripTypes.length) {
             type = tripTypes[i];
@@ -39,14 +44,17 @@ public class Trip {
         }
     }
 
+    //get method
     public String getTransport() {
         return transport;
     }
 
+    //set method
     public void setTransport(String transport) {
         this.transport = transport;
     }
 
+    //set method
     public void setTransport(int i) {
         if (i >= 0 && i < transportTypes.length) {
             transport = transport;
@@ -55,22 +63,27 @@ public class Trip {
         }
     }
 
+    //get method
     public boolean isFood() {
         return food;
     }
 
+    //set method
     public void setFood(boolean food) {
         this.food = food;
     }
 
+    //get method
     public int getDays() {
         return days;
     }
 
+    //set method
     public void setDays(int days) {
         this.days = days;
     }
 
+    //to string
     @Override
     public String toString() {
         return "Trip{" +
@@ -80,4 +93,5 @@ public class Trip {
                 ", days=" + days +
                 '}';
     }
+
 }

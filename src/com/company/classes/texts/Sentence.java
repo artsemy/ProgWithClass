@@ -7,24 +7,19 @@ public class Sentence {
     private Word[] words;
     private int count;
 
+    //constructor
     public Sentence() {
         words = new Word[1];
         count = 0;
     }
 
+    //constructor
     public Sentence(Word[] words) {
         this.words = words;
         count = words.length;
     }
 
-    public Word[] getWords() {
-        return words;
-    }
-
-    public void setWords(Word[] words) {
-        this.words = words;
-    }
-
+    //to string
     @Override
     public String toString() {
         String res = words[0].getWord();
@@ -34,6 +29,7 @@ public class Sentence {
         return res;
     }
 
+    //add word
     public void addWord(Word word){
         if (count == 0){
             word.firstWord();

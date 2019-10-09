@@ -12,6 +12,7 @@ public class Airline {
     private Time time;
     private String[] days;
 
+    //constructor
     public Airline(String distinct, int number, String type, Time time, String[] days) {
         this.distinct = distinct;
         this.number = number;
@@ -20,6 +21,7 @@ public class Airline {
         this.days = days;
     }
 
+    //constructor
     public Airline() {
         distinct = "Minsk";
         number = 1;
@@ -28,6 +30,7 @@ public class Airline {
         days = new String[]{"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
     }
 
+    //to string
     @Override
     public String toString() {
         return "Airline{" +
@@ -39,43 +42,34 @@ public class Airline {
                 '}';
     }
 
+    //get method
     public String getDistinct() {
         return distinct;
     }
 
+    //set method
     public void setDistinct(String distinct) {
         this.distinct = distinct;
     }
 
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
+    //get method
     public Time getTime() {
         return time;
     }
 
+    //set method
     public void setTime(Time time) {
         this.time = time;
     }
 
+    //get method
     public String[] getDays() {
         return days;
     }
 
+    //set method
     public void setDays(String[] days) {
         this.days = days;
     }
+
 }

@@ -5,32 +5,19 @@ public class Engine {
     private String model;
     private int run;
 
+    //constructor
     public Engine(String model, int run) {
         this.model = model;
         this.run = run;
     }
 
+    //constructor
     public Engine() {
         model = "mercedes";
         run = 100_000;
     }
 
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public int getRun() {
-        return run;
-    }
-
-    public void setRun(int run) {
-        this.run = run;
-    }
-
+    //to string
     @Override
     public String toString() {
         return "Engine{" +
@@ -38,4 +25,5 @@ public class Engine {
                 ", run=" + run +
                 '}';
     }
+
 }

@@ -1,7 +1,6 @@
 package com.company.classes.customers;
 
 import com.company.classes.Counter;
-import com.company.classes.customers.Customer;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -11,16 +10,19 @@ public class CustomerList {
     Customer[] customers;
     Counter counter;
 
+    //constructor
     public CustomerList(Customer[] customers, Counter counter) {
         this.customers = customers;
         this.counter = counter;
     }
 
+    //constructor
     public CustomerList(){
         customers = new Customer[1];
         counter = new Counter(0, Integer.MAX_VALUE, 0);
     }
 
+    //add customer to array
     public void addCustomer(Customer c){
         if (counter.getValue() == customers.length){
             customers = Arrays.copyOf(customers, customers.length+1);
@@ -30,6 +32,7 @@ public class CustomerList {
         counter.increase();
     }
 
+    //sort by name
     public void sortByName(){
         Arrays.sort(customers, new Comparator<Customer>() {
             @Override
@@ -41,6 +44,7 @@ public class CustomerList {
         });
     }
 
+    //print by card interval
     public void showByCardInterval(long l1, long l2){
         for (Customer c: customers) {
             long cardNumber = c.getCreditCardNumber();
@@ -50,9 +54,11 @@ public class CustomerList {
         }
     }
 
+    //print customer
     public void print(){
         for (Customer c: customers) {
             System.out.println(c);
         }
     }
+
 }

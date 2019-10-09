@@ -7,33 +7,30 @@ public class TripList {
 
     private Trip[] trips;
 
+    //constructor
     public TripList() {
         trips = new Trip[0];
     }
 
+    //constructor
     public TripList(Trip[] trips) {
         this.trips = trips;
     }
 
-    public Trip[] getTrips() {
-        return trips;
-    }
-
-    public void setTrips(Trip[] trips) {
-        this.trips = trips;
-    }
-
+    //add trip
     public void addTrip(Trip trip){
         trips = Arrays.copyOf(trips, trips.length+1);
         trips[trips.length-1] = trip;
     }
 
+    //print all
     public void print(){
         for (Trip t: trips) {
             System.out.println(t);
         }
     }
 
+    //sort by type
     public void sortByType(){
         Arrays.sort(trips, new Comparator<Trip>() {
             @Override
@@ -43,6 +40,7 @@ public class TripList {
         });
     }
 
+    //sort by transport
     public void sortByTransport(){
         Arrays.sort(trips, new Comparator<Trip>() {
             @Override
@@ -52,6 +50,7 @@ public class TripList {
         });
     }
 
+    //sort by food
     public void sortByFood(){
         Arrays.sort(trips, new Comparator<Trip>() {
             @Override
@@ -61,6 +60,7 @@ public class TripList {
         });
     }
 
+    //sort by days
     public void sortByDays(){
         Arrays.sort(trips, new Comparator<Trip>() {
             @Override
@@ -70,16 +70,19 @@ public class TripList {
         });
     }
 
+    //find by 4 params
     public TripList findTrip(String type, String transport, boolean food, int days){
         TripList res = this.findByType(type).findByTransport(transport).findByFood(food).findByDays(days);
         return res;
     }
 
+    //find by 3 params
     public TripList findTrip(String type, String transport, int days){
         TripList res = this.findByType(type).findByTransport(transport).findByDays(days);
         return res;
     }
 
+    //find by type
     public TripList findByType(String type){
         TripList res = new TripList();
         if (type != null){
@@ -94,6 +97,7 @@ public class TripList {
         return res;
     }
 
+    //find by transport
     public TripList findByTransport(String transport){
         TripList res = new TripList();
         if (transport != null){
@@ -108,6 +112,7 @@ public class TripList {
         return res;
     }
 
+    //find by days
     public TripList findByDays(int days){
         TripList res = new TripList();
         if (days > 0) {
@@ -122,6 +127,7 @@ public class TripList {
         return res;
     }
 
+    //find by food
     public TripList findByFood(boolean food){
         TripList res = new TripList();
         for (Trip t : trips) {
@@ -131,4 +137,5 @@ public class TripList {
         }
         return res;
     }
+
 }

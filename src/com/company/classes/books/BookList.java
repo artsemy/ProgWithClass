@@ -9,16 +9,13 @@ public class BookList {
     private Book[] books;
     private Counter counter;
 
-    public BookList(Book[] books, Counter counter) {
-        this.books = books;
-        this.counter = counter;
-    }
-
+    //constructor
     public BookList(){
         books = new Book[1];
         counter = new Counter(0, Integer.MAX_VALUE, 0);
     }
 
+    //add book to array
     public void addBook(Book book){
         if (counter.getValue() == books.length){
             books = Arrays.copyOf(books, books.length+1);
@@ -28,6 +25,7 @@ public class BookList {
         counter.increase();
     }
 
+    //get array by author
     public BookList getByAuthor(String author){
         BookList res = new BookList();
         for (Book book: books) {
@@ -38,6 +36,7 @@ public class BookList {
         return res;
     }
 
+    //check for author
     private boolean containsAuthor(String author, Book book){
         for (String s: book.getAuthor()) {
             if (s.equals(author)){
@@ -47,6 +46,7 @@ public class BookList {
         return false;
     }
 
+    //get array by publisher
     public BookList getByPublish(String publish){
         BookList res = new BookList();
         for (Book b: books) {
@@ -57,6 +57,7 @@ public class BookList {
         return res;
     }
 
+    //get array released after year
     public BookList getAfterYear(int year){
         BookList res = new BookList();
         for (Book b: books) {
@@ -67,6 +68,7 @@ public class BookList {
         return res;
     }
 
+    //print array
     public void print(){
         for (Book b: books) {
             System.out.println(b);

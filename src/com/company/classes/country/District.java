@@ -9,6 +9,7 @@ public class District {
     private String name;
     private double area;
 
+    //constructor
     public District() {
         mainCity = new City("Slutsk", 10);
         cities = new City[0];
@@ -16,45 +17,17 @@ public class District {
         area = 10;
     }
 
-    public District(City mainCity, City[] cities, String name, double area) {
-        this.mainCity = mainCity;
-        this.cities = cities;
-        this.name = name;
-        this.area = area;
-    }
-
-    public City getMainCity() {
-        return mainCity;
-    }
-
-    public void setMainCity(City mainCity) {
-        this.mainCity = mainCity;
-    }
-
-    public City[] getCities() {
-        return cities;
-    }
-
-    public void setCities(City[] cities) {
-        this.cities = cities;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    //get method
     public double getArea() {
         return area;
     }
 
+    //set method
     public void setArea(double area) {
         this.area = area;
     }
 
+    //to string
     @Override
     public String toString() {
         return "District{" +
@@ -65,6 +38,7 @@ public class District {
                 '}';
     }
 
+    //add city
     public void addCity(City c){
         cities = Arrays.copyOf(cities, cities.length+1);
         cities[cities.length-1] = c;

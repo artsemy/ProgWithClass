@@ -8,6 +8,7 @@ public class Car {
     private boolean isFueled;
     private boolean isStarted;
 
+    //constructor
     public Car() {
         model = "Lada";
         wheels = new Wheel[4];
@@ -19,6 +20,7 @@ public class Car {
         isStarted = false;
     }
 
+    //constructor
     public Car(String model, Wheel[] wheels, Engine engine, boolean isFueled, boolean isStarted) {
         this.model = model;
         this.wheels = wheels;
@@ -27,46 +29,57 @@ public class Car {
         this.isStarted = isStarted;
     }
 
+    //get method
     public String getModel() {
         return model;
     }
 
+    //set method
     public void setModel(String model) {
         this.model = model;
     }
 
+    //get method
     public Wheel[] getWheels() {
         return wheels;
     }
 
+    //set method
     public void setWheels(Wheel[] wheels) {
         this.wheels = wheels;
     }
 
+    //get method
     public Engine getEngine() {
         return engine;
     }
 
+    //set method
     public void setEngine(Engine engine) {
         this.engine = engine;
     }
 
+    //get method
     public boolean isFueled() {
         return isFueled;
     }
 
+    //set method
     public void setFueled(boolean fueled) {
         isFueled = fueled;
     }
 
+    //get method
     public boolean isStarted() {
         return isStarted;
     }
 
+    //set method
     public void setStarted(boolean started) {
         isStarted = started;
     }
 
+    //to string
     @Override
     public String toString() {
         return "Car{" +
@@ -78,7 +91,9 @@ public class Car {
                 '}';
     }
 
+    //print model
     public void printModel(){
         System.out.println(model);
     }
+
 }

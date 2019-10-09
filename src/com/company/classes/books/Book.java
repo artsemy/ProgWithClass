@@ -13,6 +13,7 @@ public class Book {
     private double price;
     private String binding;
 
+    //constructor
     public Book(int id, String title, String[] author, String publish, int year, int pages, double price, String binding) {
         this.id = id;
         this.title = title;
@@ -24,6 +25,7 @@ public class Book {
         this.binding = binding;
     }
 
+    //constructor
     public Book(){
         title = "Math";
         author = new String[]{"Pifagor"};
@@ -34,70 +36,47 @@ public class Book {
         binding = "no";
     }
 
+    //get method
     public int getId() {
         return id;
     }
 
+    //set method
     public void setId(int id) {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
+    //get method
     public String[] getAuthor() {
         return author;
     }
 
+    //set method
     public void setAuthor(String[] author) {
         this.author = author;
     }
 
+    //get method
     public String getPublish() {
         return publish;
     }
 
+    //set method
     public void setPublish(String publish) {
         this.publish = publish;
     }
 
+    //get method
     public int getYear() {
         return year;
     }
 
+    //set method
     public void setYear(int year) {
         this.year = year;
     }
 
-    public int getPages() {
-        return pages;
-    }
-
-    public void setPages(int pages) {
-        this.pages = pages;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public String getBinding() {
-        return binding;
-    }
-
-    public void setBinding(String binding) {
-        this.binding = binding;
-    }
-
+    //to string
     @Override
     public String toString() {
         return "Book{" +

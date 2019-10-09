@@ -9,6 +9,7 @@ public class Country {
     private State[] states;
     private double area;
 
+    //constructor
     public Country() {
         name = "Belarus";
         capital = new City("Minsk", 1000);
@@ -16,45 +17,7 @@ public class Country {
         area = 1000;
     }
 
-    public Country(String name, City capital, State[] states, double area) {
-        this.name = name;
-        this.capital = capital;
-        this.states = states;
-        this.area = area;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public City getCapital() {
-        return capital;
-    }
-
-    public void setCapital(City capital) {
-        this.capital = capital;
-    }
-
-    public State[] getStates() {
-        return states;
-    }
-
-    public void setStates(State[] states) {
-        this.states = states;
-    }
-
-    public double getArea() {
-        return area;
-    }
-
-    public void setArea(double area) {
-        this.area = area;
-    }
-
+    //to string
     @Override
     public String toString() {
         return "Country{" +
@@ -65,12 +28,14 @@ public class Country {
                 '}';
     }
 
+    //add state
     public void addState(State s){
         states = Arrays.copyOf(states, states.length+1);
         states[states.length-1] = s;
         countArea();
     }
 
+    //count area
     private void countArea(){
         area = 0;
         for (State s: states) {
@@ -78,22 +43,26 @@ public class Country {
         }
     }
 
+    //print capital
     public void printCapital(){
         System.out.println("Capital: " + capital.getName());
     }
 
+    //count states
     public void printCountStates(){
         System.out.println("Number of States: " + states.length);
     }
 
+    //print area
     public void printArea(){
         System.out.println("Area: " + area);
     }
 
+    //print states with its capitals
     public void printSatesCityS(){
         System.out.println("States main cities:");
         for (State s: states) {
-            System.out.println(s.getMainCity().getName());
+            System.out.println(s.getName() + ": " + s.getMainCity().getName());
         }
     }
 

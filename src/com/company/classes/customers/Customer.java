@@ -11,6 +11,7 @@ public class Customer {
     private long bankAccountNumber;
     private String fullName;
 
+    //constructor
     public Customer(){
         lastName = "Smith";
         firstName = "Alex";
@@ -20,6 +21,7 @@ public class Customer {
         bankAccountNumber = 0l;
     }
 
+    //constructor
     public Customer(int id, String lastName, String firstName, String middleName, String address, long creditCardNumber, long bankAccountNumber) {
         this.id = id;
         this.lastName = lastName;
@@ -30,6 +32,7 @@ public class Customer {
         this.bankAccountNumber = bankAccountNumber;
     }
 
+    //to string
     @Override
     public String toString() {
         return "Customer{" +
@@ -43,6 +46,7 @@ public class Customer {
                 '}';
     }
 
+    //get method
     public int getId() {
         return id;
     }
@@ -51,61 +55,44 @@ public class Customer {
         this.id = id;
     }
 
+    //get method
     public String getLastName() {
         return lastName;
     }
 
+    //set method
     public void setLastName(String lastName) {
         this.lastName = lastName;
         setFullName();
     }
 
+    //get method
     public String getFirstName() {
         return firstName;
     }
 
+    //set method
     public void setFirstName(String firstName) {
         this.firstName = firstName;
         setFullName();
     }
 
-    public String getMiddleName() {
-        return middleName;
-    }
-
-    public void setMiddleName(String middleName) {
-        this.middleName = middleName;
-        setFullName();
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
+    //get method
     public long getCreditCardNumber() {
         return creditCardNumber;
     }
 
+    //set method
     public void setCreditCardNumber(long creditCardNumber) {
         this.creditCardNumber = creditCardNumber;
     }
 
-    public long getBankAccountNumber() {
-        return bankAccountNumber;
-    }
-
-    public void setBankAccountNumber(long bankAccountNumber) {
-        this.bankAccountNumber = bankAccountNumber;
-    }
-
+    //set method
     private void setFullName(){
         fullName = lastName + " " + firstName + " " + middleName;
     }
 
+    //get method
     public String getFullName(){
         return fullName;
     }

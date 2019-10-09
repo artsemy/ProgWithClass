@@ -5,32 +5,29 @@ public class City {
     private String name;
     private int population;
 
+    //constructor
     public City() {
         name = "Vil";
         population = 1;
     }
 
+    //constructor
     public City(String name, int population) {
         this.name = name;
         this.population = population;
     }
 
+    //get method
     public String getName() {
         return name;
     }
 
+    //set method
     public void setName(String name) {
         this.name = name;
     }
 
-    public int getPopulation() {
-        return population;
-    }
-
-    public void setPopulation(int population) {
-        this.population = population;
-    }
-
+    //to string
     @Override
     public String toString() {
         return "City{" +
